@@ -37,6 +37,7 @@ if (isset($_GET['action'])) {
          $task = array(
                 'id' => $row['id'],
                 'label' => $row['label'],
+                'description' => $row['description'],
                 'dateCreated' => $row['dateCreated'],
                 'completed' => $row['completed']                 
             );
@@ -50,18 +51,23 @@ if (isset($_GET['action'])) {
           switch ($row['priority']) {
               case(1):
                 $task['priority'] = "Very Low";
+                $task['priority_id'] = "1";
                   break;
               case(2):
                 $task['priority'] = "Low";
+                $task['priority_id'] = "2";
                   break;  
               case(3):
                 $task['priority'] = "Medium";
+                $task['priority_id'] = "3";
                   break;    
               case(4):
                 $task['priority'] = "Important";
+                $task['priority_id'] = "4";
                   break;   
               case(5):
                 $task['priority'] = "Very Important";
+                $task['priority_id'] = "5";
                   break;                
           } 
           array_push($allTasks, $task);  
